@@ -1,0 +1,265 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Remote Jobs API",
+    "description": "Remote1stJobs provides a comprehensive JSON and RSS feed system for accessing fresh remote job listings in the UK, Europe, and EMEA. This API is ideal for newsletters, communities, AI agents, and job tools that require structured data of Europe-focused remote roles.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://www.remote1stjobs.com/remote-jobs-api-rss-europe"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.remote1stjobs.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/jobs": {
+      "get": {
+        "summary": "Get remote job listings",
+        "description": "Retrieve a list of remote job listings in the UK, Europe, and EMEA region. Returns structured data of Europe-focused remote roles suitable for newsletters, communities, AI agents, and job tools.",
+        "operationId": "getRemoteJobs",
+        "tags": [
+          "Jobs"
+        ],
+        "parameters": [
+          {
+            "name": "region",
+            "in": "query",
+            "description": "Filter jobs by region (UK, Europe, EMEA)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "UK",
+                "Europe",
+                "EMEA"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of job listings to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Response format (json or rss)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "rss"
+              ],
+              "default": "json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with job listings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jobs": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Job"
+                      }
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total number of jobs available"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "description": "Current page number"
+                    }
+                  }
+                },
+                "example": {
+                  "jobs": [
+                    {
+                      "id": "12345",
+                      "title": "Senior Software Engineer",
+                      "company": "Tech Company Ltd",
+                      "location": "Remote - UK",
+                      "region": "UK",
+                      "description": "We are looking for an experienced software engineer...",
+                      "salary": "£60,000 - £80,000",
+                      "type": "Full-time",
+                      "url": "https://www.remote1stjobs.com/jobs/12345",
+                      "posted_date": "2024-01-15T10:00:00Z",
+                      "tags": [
+                        "Engineering",
+                        "Remote",
+                        "Full-time"
+                      ]
+                    }
+                  ],
+                  "total": 150,
+                  "page": 1
+                }
+              },
+              "application/rss+xml": {
+                "schema": {
+                  "type": "string",
+                  "format": "xml"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Job": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the job listing"
+          },
+          "title": {
+            "type": "string",
+            "description": "Job title"
+          },
+          "company": {
+            "type": "string",
+            "description": "Company name"
+          },
+          "location": {
+            "type": "string",
+            "description": "Job location (remote location specification)"
+          },
+          "region": {
+            "type": "string",
+            "description": "Geographic region (UK, Europe, EMEA)",
+            "enum": [
+              "UK",
+              "Europe",
+              "EMEA"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed job description"
+          },
+          "salary": {
+            "type": "string",
+            "description": "Salary range or compensation details"
+          },
+          "type": {
+            "type": "string",
+            "description": "Employment type",
+            "enum": [
+              "Full-time",
+              "Part-time",
+              "Contract",
+              "Freelance"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the full job listing"
+          },
+          "posted_date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date and time when the job was posted"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags or categories associated with the job"
+          },
+          "apply_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Direct application URL"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "company",
+          "location",
+          "url"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "code": {
+            "type": "string",
+            "description": "Error code"
+          },
+          "details": {
+            "type": "string",
+            "description": "Additional error details"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Jobs",
+      "description": "Operations related to remote job listings"
+    }
+  ]
+}

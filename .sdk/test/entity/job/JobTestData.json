@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "job": {
+      "JOB00": {
+        "apply_url": "s78",
+        "company": "s79",
+        "description": "s7a",
+        "id": "JOB00",
+        "location": "s7c",
+        "posted_date": "s7d",
+        "region": "s7e",
+        "salary": "s7f",
+        "tag": [],
+        "title": "s81",
+        "type": "s82",
+        "url": "s83"
+      },
+      "JOB01": {
+        "apply_url": "sf0",
+        "company": "sf1",
+        "description": "sf2",
+        "id": "JOB01",
+        "location": "sf4",
+        "posted_date": "sf5",
+        "region": "sf6",
+        "salary": "sf7",
+        "tag": [],
+        "title": "sf9",
+        "type": "sfa",
+        "url": "sfb"
+      },
+      "JOB02": {
+        "apply_url": "s168",
+        "company": "s169",
+        "description": "s16a",
+        "id": "JOB02",
+        "location": "s16c",
+        "posted_date": "s16d",
+        "region": "s16e",
+        "salary": "s16f",
+        "tag": [],
+        "title": "s171",
+        "type": "s172",
+        "url": "s173"
+      }
+    }
+  },
+  "new": {
+    "job": {
+      "job_ref01": {
+        "apply_url": "s1e0",
+        "company": "s1e1",
+        "description": "s1e2",
+        "location": "s1e4",
+        "posted_date": "s1e5",
+        "region": "s1e6",
+        "salary": "s1e7",
+        "tag": [],
+        "title": "s1e9",
+        "type": "s1ea",
+        "url": "s1eb"
+      }
+    }
+  }
+}

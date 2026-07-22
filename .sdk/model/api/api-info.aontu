@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://www.remote1stjobs.com/remote-jobs-api-rss-europe"
+      }
+      description: "Remote1stJobs provides a comprehensive JSON and RSS feed system for accessing fresh remote job listings in the UK, Europe, and EMEA. This API is ideal for newsletters, communities, AI agents, and job tools that require structured data of Europe-focused remote roles."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://www.remote1stjobs.com"
+        }
+      ]
+      summary: "Remote1stJobs provides a comprehensive JSON and RSS feed system for accessing fresh remote job listings in the UK, Europe, and EMEA."
+      title: "Remote Jobs API"
+      version: "1.0.0"
+      website: "https://remote1stjobs.com"
+    }
+  }
+}
+
