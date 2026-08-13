@@ -100,7 +100,7 @@ $job = $client->Job();
 | `posted_date` | `string` | No |  |
 | `region` | `string` | No |  |
 | `salary` | `string` | No |  |
-| `tag` | `array` | No |  |
+| `tags` | `array` | No |  |
 | `title` | `string` | Yes |  |
 | `type` | `string` | No |  |
 | `url` | `string` | Yes |  |

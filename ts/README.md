@@ -35,7 +35,9 @@ const client = new RemoteJobsSDK()
 
 ### 2. List job records
 
-`list()` resolves to an array of Job objects — iterate it directly:
+`list()` resolves to an array of Job ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const jobs = await client.Job().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = RemoteJobsSDK.test()
 
 const job = await client.Job().list()
-// job is a bare entity populated with mock response data
+// job is the entity, populated with mock response data
+// — call job.data() for the record itself
 console.log(job)
 ```
 
@@ -292,7 +295,7 @@ The `prepare()` method returns:
 | `posted_date` |  |
 | `region` |  |
 | `salary` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `type` |  |
 | `url` |  |
@@ -328,7 +331,7 @@ Create an instance: `const job = client.Job()`
 | `posted_date` | `string` |  |
 | `region` | `string` |  |
 | `salary` | `string` |  |
-| `tag` | `any[]` |  |
+| `tags` | `any[]` |  |
 | `title` | `string` |  |
 | `type` | `string` |  |
 | `url` | `string` |  |

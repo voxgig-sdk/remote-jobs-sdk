@@ -95,7 +95,7 @@ job = client.Job()
 | `posted_date` | `str` | No |  |
 | `region` | `str` | No |  |
 | `salary` | `str` | No |  |
-| `tag` | `list` | No |  |
+| `tags` | `list` | No |  |
 | `title` | `str` | Yes |  |
 | `type` | `str` | No |  |
 | `url` | `str` | Yes |  |

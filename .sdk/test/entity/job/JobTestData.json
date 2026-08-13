@@ -10,7 +10,7 @@
         "posted_date": "s7d",
         "region": "s7e",
         "salary": "s7f",
-        "tag": [],
+        "tags": [],
         "title": "s81",
         "type": "s82",
         "url": "s83"
@@ -24,7 +24,7 @@
         "posted_date": "sf5",
         "region": "sf6",
         "salary": "sf7",
-        "tag": [],
+        "tags": [],
         "title": "sf9",
         "type": "sfa",
         "url": "sfb"
@@ -38,7 +38,7 @@
         "posted_date": "s16d",
         "region": "s16e",
         "salary": "s16f",
-        "tag": [],
+        "tags": [],
         "title": "s171",
         "type": "s172",
         "url": "s173"
@@ -55,7 +55,7 @@
         "posted_date": "s1e5",
         "region": "s1e6",
         "salary": "s1e7",
-        "tag": [],
+        "tags": [],
         "title": "s1e9",
         "type": "s1ea",
         "url": "s1eb"

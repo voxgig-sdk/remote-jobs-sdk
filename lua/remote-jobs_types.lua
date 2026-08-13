@@ -15,7 +15,7 @@
 ---@field posted_date? string
 ---@field region? string
 ---@field salary? string
----@field tag? table
+---@field tags? table
 ---@field title string
 ---@field type? string
 ---@field url string
@@ -29,7 +29,7 @@
 ---@field posted_date? string
 ---@field region? string
 ---@field salary? string
----@field tag? table
+---@field tags? table
 ---@field title? string
 ---@field type? string
 ---@field url? string

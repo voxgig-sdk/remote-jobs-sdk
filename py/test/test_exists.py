@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# RemoteJobs SDK exists test
 
 import pytest
 from remotejobs_sdk import RemoteJobsSDK

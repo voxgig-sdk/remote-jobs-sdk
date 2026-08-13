@@ -83,7 +83,7 @@ module RemoteJobsConfig
             },
             {
               "active" => true,
-              "name" => "tag",
+              "name" => "tags",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 8,
@@ -148,6 +148,7 @@ module RemoteJobsConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/jobs",
                   "parts" => [
@@ -163,7 +164,7 @@ module RemoteJobsConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.jobs`",
                   },
                   "index$" => 0,
                 },

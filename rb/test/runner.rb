@@ -23,8 +23,8 @@ module RemoteJobsTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("REMOTEJOBS_TEST_LIVE")
-    override = getenv("REMOTEJOBS_TEST_OVERRIDE")
+    live = getenv("REMOTE_JOBS_TEST_LIVE")
+    override = getenv("REMOTE_JOBS_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module RemoteJobsTestRunner
       end
     end
 
-    explain = getenv("REMOTEJOBS_TEST_EXPLAIN")
-    m["REMOTEJOBS_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("REMOTE_JOBS_TEST_EXPLAIN")
+    m["REMOTE_JOBS_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

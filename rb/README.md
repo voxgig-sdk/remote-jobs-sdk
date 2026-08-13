@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = RemoteJobsSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 job = client.Job.list()
 puts job
 ```
@@ -244,7 +245,7 @@ returns a result `Hash` with these keys:
 | `posted_date` |  |
 | `region` |  |
 | `salary` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `type` |  |
 | `url` |  |
@@ -280,7 +281,7 @@ Create an instance: `job = client.Job`
 | `posted_date` | `String` |  |
 | `region` | `String` |  |
 | `salary` | `String` |  |
-| `tag` | `Array` |  |
+| `tags` | `Array` |  |
 | `title` | `String` |  |
 | `type` | `String` |  |
 | `url` | `String` |  |

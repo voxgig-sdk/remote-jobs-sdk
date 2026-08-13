@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local job, err = client:Job():load()
+    local job, err = client:Job():list()
     if err then error(err) end
-    -- job is the loaded record
+    -- job is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -239,7 +239,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `posted_date` |  |
 | `region` |  |
 | `salary` |  |
-| `tag` |  |
+| `tags` |  |
 | `title` |  |
 | `type` |  |
 | `url` |  |
@@ -275,7 +275,7 @@ Create an instance: `local job = client:Job(nil)`
 | `posted_date` | `string` |  |
 | `region` | `string` |  |
 | `salary` | `string` |  |
-| `tag` | `table` |  |
+| `tags` | `table` |  |
 | `title` | `string` |  |
 | `type` | `string` |  |
 | `url` | `string` |  |

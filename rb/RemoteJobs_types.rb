@@ -34,7 +34,7 @@
 # @!attribute [rw] salary
 #   @return [String, nil]
 #
-# @!attribute [rw] tag
+# @!attribute [rw] tags
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -54,7 +54,7 @@ Job = Struct.new(
   :posted_date,
   :region,
   :salary,
-  :tag,
+  :tags,
   :title,
   :type,
   :url,
@@ -87,7 +87,7 @@ Job = Struct.new(
 # @!attribute [rw] salary
 #   @return [String, nil]
 #
-# @!attribute [rw] tag
+# @!attribute [rw] tags
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
@@ -107,7 +107,7 @@ JobListMatch = Struct.new(
   :posted_date,
   :region,
   :salary,
-  :tag,
+  :tags,
   :title,
   :type,
   :url,

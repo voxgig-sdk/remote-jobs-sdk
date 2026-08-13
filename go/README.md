@@ -268,7 +268,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"posted_date"` |  |
 | `"region"` |  |
 | `"salary"` |  |
-| `"tag"` |  |
+| `"tags"` |  |
 | `"title"` |  |
 | `"type"` |  |
 | `"url"` |  |
@@ -304,7 +304,7 @@ Create an instance: `job := client.Job(nil)`
 | `posted_date` | `string` |  |
 | `region` | `string` |  |
 | `salary` | `string` |  |
-| `tag` | `[]any` |  |
+| `tags` | `[]any` |  |
 | `title` | `string` |  |
 | `type` | `string` |  |
 | `url` | `string` |  |

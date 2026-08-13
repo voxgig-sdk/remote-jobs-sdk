@@ -16,11 +16,11 @@
 import pytest
 
 from remotejobs_sdk import RemoteJobsSDK
-from core.error import RemoteJobsError
-from core.result import RemoteJobsResult
-from core.response import RemoteJobsResponse
-from core.spec import RemoteJobsSpec
-from feature.base_feature import RemoteJobsBaseFeature
+from remotejobs_sdk.core.error import RemoteJobsError
+from remotejobs_sdk.core.result import RemoteJobsResult
+from remotejobs_sdk.core.response import RemoteJobsResponse
+from remotejobs_sdk.core.spec import RemoteJobsSpec
+from remotejobs_sdk.feature.base_feature import RemoteJobsBaseFeature
 
 
 def _client():

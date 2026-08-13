@@ -88,7 +88,7 @@ class RemoteJobsConfig
             ],
             [
               'active' => true,
-              'name' => 'tag',
+              'name' => 'tags',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 8,
@@ -153,6 +153,7 @@ class RemoteJobsConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/jobs',
                   'parts' => [
@@ -168,7 +169,7 @@ class RemoteJobsConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.jobs`',
                   ],
                   'index$' => 0,
                 ],

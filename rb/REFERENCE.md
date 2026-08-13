@@ -101,7 +101,7 @@ job = client.Job
 | `posted_date` | `String` | No |  |
 | `region` | `String` | No |  |
 | `salary` | `String` | No |  |
-| `tag` | `Array` | No |  |
+| `tags` | `Array` | No |  |
 | `title` | `String` | Yes |  |
 | `type` | `String` | No |  |
 | `url` | `String` | Yes |  |

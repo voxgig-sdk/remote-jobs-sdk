@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from remotejobs_sdk.utility.voxgig_struct import voxgig_struct as vs
 from remotejobs_sdk import RemoteJobsSDK
-from core import helpers
+from remotejobs_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _job_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "REMOTEJOBS_TEST_JOB_ENTID": {},
-        "REMOTEJOBS_TEST_LIVE": "FALSE",
+        "REMOTE_JOBS_TEST_JOB_ENTID": {},
+        "REMOTE_JOBS_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("REMOTEJOBS_TEST_LIVE") == "TRUE"
+    live = env.get("REMOTE_JOBS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

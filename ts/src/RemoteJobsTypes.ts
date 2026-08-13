@@ -14,7 +14,7 @@ export interface Job {
   posted_date?: string
   region?: string
   salary?: string
-  tag?: any[]
+  tags?: any[]
   title: string
   type?: string
   url: string
@@ -29,7 +29,7 @@ export interface JobListMatch {
   posted_date?: string
   region?: string
   salary?: string
-  tag?: any[]
+  tags?: any[]
   title?: string
   type?: string
   url?: string

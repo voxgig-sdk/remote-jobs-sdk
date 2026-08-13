@@ -46,7 +46,7 @@ main: kit: entity: job: {
       type: "`$STRING`"
     }
     {
-      name: "tag"
+      name: "tags"
       req: false
       type: "`$ARRAY`"
     }
@@ -120,7 +120,7 @@ main: kit: entity: job: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.jobs`"
           }
         }
       ]

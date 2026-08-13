@@ -66,11 +66,11 @@ function job_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "REMOTEJOBS_TEST_JOB_ENTID" => [],
-        "REMOTEJOBS_TEST_LIVE" => "FALSE",
+        "REMOTE_JOBS_TEST_JOB_ENTID" => [],
+        "REMOTE_JOBS_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["REMOTEJOBS_TEST_LIVE"] === "TRUE";
+    $live = $env["REMOTE_JOBS_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

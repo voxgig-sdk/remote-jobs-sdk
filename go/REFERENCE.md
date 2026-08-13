@@ -106,7 +106,7 @@ fmt.Println(job.GetName()) // "job"
 | `posted_date` | `string` | No |  |
 | `region` | `string` | No |  |
 | `salary` | `string` | No |  |
-| `tag` | `[]any` | No |  |
+| `tags` | `[]any` | No |  |
 | `title` | `string` | Yes |  |
 | `type` | `string` | No |  |
 | `url` | `string` | Yes |  |

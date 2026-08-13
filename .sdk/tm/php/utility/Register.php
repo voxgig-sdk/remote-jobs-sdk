@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ RemoteJobsUtility::setRegistrar(function (RemoteJobsUtility $u): void {
     $u->prepare_params = [RemoteJobsPrepareParams::class, 'call'];
     $u->prepare_path = [RemoteJobsPreparePath::class, 'call'];
     $u->prepare_query = [RemoteJobsPrepareQuery::class, 'call'];
+    $u->graphql_body = [RemoteJobsGraphql::class, 'body'];
+    $u->graphql_errors = [RemoteJobsGraphql::class, 'errors'];
     $u->result_basic = [RemoteJobsResultBasic::class, 'call'];
     $u->result_body = [RemoteJobsResultBody::class, 'call'];
     $u->result_headers = [RemoteJobsResultHeaders::class, 'call'];

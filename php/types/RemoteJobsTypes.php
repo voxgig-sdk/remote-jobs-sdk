@@ -23,7 +23,7 @@ class Job
     public ?string $posted_date = null;
     public ?string $region = null;
     public ?string $salary = null;
-    public ?array $tag = null;
+    public ?array $tags = null;
     public string $title;
     public ?string $type = null;
     public string $url;
@@ -40,7 +40,7 @@ class JobListMatch
     public ?string $posted_date = null;
     public ?string $region = null;
     public ?string $salary = null;
-    public ?array $tag = null;
+    public ?array $tags = null;
     public ?string $title = null;
     public ?string $type = null;
     public ?string $url = null;
