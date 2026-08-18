@@ -40,7 +40,7 @@ class RemoteJobsSDK
         $utility = new RemoteJobsUtility();
         $this->_utility = $utility;
 
-        $config = RemoteJobsConfig::make_config();
+        $config = RemoteJobsConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

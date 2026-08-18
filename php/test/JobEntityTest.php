@@ -40,7 +40,7 @@ class JobEntityTest extends TestCase
         $this->assertCount(3, $seen);
 
         // Inbound: streaming active -> yields each item from the feature.
-        $cfg = RemoteJobsConfig::make_config();
+        $cfg = RemoteJobsConfig::shared_config();
         if (isset($cfg["feature"]) && is_array($cfg["feature"]) && isset($cfg["feature"]["streaming"])) {
             $sdk = RemoteJobsSDK::test($seed, ["feature" => ["streaming" => ["active" => true]]]);
             $got = [];

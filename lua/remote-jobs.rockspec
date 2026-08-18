@@ -23,6 +23,7 @@ build = {
   modules = {
     ["remote-jobs_sdk"] = "remote-jobs_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

@@ -28,7 +28,7 @@ class RemoteJobsSDK
     utility = RemoteJobsUtility.new
     @_utility = utility
 
-    config = RemoteJobsConfig.make_config
+    config = RemoteJobsConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
