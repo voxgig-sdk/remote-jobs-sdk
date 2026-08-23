@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,18 +287,18 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `apply_url` |  |
-| `company` |  |
-| `description` |  |
-| `id` |  |
-| `location` |  |
-| `posted_date` |  |
-| `region` |  |
-| `salary` |  |
-| `tags` |  |
-| `title` |  |
-| `type` |  |
-| `url` |  |
+| `apply_url` | Direct application URL |
+| `company` | Company name |
+| `description` | Detailed job description |
+| `id` | Unique identifier for the job listing |
+| `location` | Job location (remote location specification) |
+| `posted_date` | Date and time when the job was posted |
+| `region` | Geographic region (UK, Europe, EMEA) |
+| `salary` | Salary range or compensation details |
+| `tags` | Tags or categories associated with the job |
+| `title` | Job title |
+| `type` | Employment type |
+| `url` | URL to the full job listing |
 
 Operations: list.
 
@@ -323,18 +323,18 @@ Create an instance: `const job = client.Job()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `apply_url` | `string` |  |
-| `company` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `location` | `string` |  |
-| `posted_date` | `string` |  |
-| `region` | `string` |  |
-| `salary` | `string` |  |
-| `tags` | `any[]` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
-| `url` | `string` |  |
+| `apply_url` | `string` | Direct application URL |
+| `company` | `string` | Company name |
+| `description` | `string` | Detailed job description |
+| `id` | `string` | Unique identifier for the job listing |
+| `location` | `string` | Job location (remote location specification) |
+| `posted_date` | `string` | Date and time when the job was posted |
+| `region` | `string` | Geographic region (UK, Europe, EMEA) |
+| `salary` | `string` | Salary range or compensation details |
+| `tags` | `any[]` | Tags or categories associated with the job |
+| `title` | `string` | Job title |
+| `type` | `string` | Employment type |
+| `url` | `string` | URL to the full job listing |
 
 #### Example: List
 

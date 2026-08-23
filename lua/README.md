@@ -231,18 +231,18 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `apply_url` |  |
-| `company` |  |
-| `description` |  |
-| `id` |  |
-| `location` |  |
-| `posted_date` |  |
-| `region` |  |
-| `salary` |  |
-| `tags` |  |
-| `title` |  |
-| `type` |  |
-| `url` |  |
+| `apply_url` | Direct application URL |
+| `company` | Company name |
+| `description` | Detailed job description |
+| `id` | Unique identifier for the job listing |
+| `location` | Job location (remote location specification) |
+| `posted_date` | Date and time when the job was posted |
+| `region` | Geographic region (UK, Europe, EMEA) |
+| `salary` | Salary range or compensation details |
+| `tags` | Tags or categories associated with the job |
+| `title` | Job title |
+| `type` | Employment type |
+| `url` | URL to the full job listing |
 
 Operations: List.
 
@@ -267,18 +267,18 @@ Create an instance: `local job = client:Job(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `apply_url` | `string` |  |
-| `company` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `location` | `string` |  |
-| `posted_date` | `string` |  |
-| `region` | `string` |  |
-| `salary` | `string` |  |
-| `tags` | `table` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
-| `url` | `string` |  |
+| `apply_url` | `string` | Direct application URL |
+| `company` | `string` | Company name |
+| `description` | `string` | Detailed job description |
+| `id` | `string` | Unique identifier for the job listing |
+| `location` | `string` | Job location (remote location specification) |
+| `posted_date` | `string` | Date and time when the job was posted |
+| `region` | `string` | Geographic region (UK, Europe, EMEA) |
+| `salary` | `string` | Salary range or compensation details |
+| `tags` | `table` | Tags or categories associated with the job |
+| `title` | `string` | Job title |
+| `type` | `string` | Employment type |
+| `url` | `string` | URL to the full job listing |
 
 #### Example: List
 

@@ -87,18 +87,18 @@ job = client.Job()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `apply_url` | `str` | No |  |
-| `company` | `str` | Yes |  |
-| `description` | `str` | No |  |
-| `id` | `str` | Yes |  |
-| `location` | `str` | Yes |  |
-| `posted_date` | `str` | No |  |
-| `region` | `str` | No |  |
-| `salary` | `str` | No |  |
-| `tags` | `list` | No |  |
-| `title` | `str` | Yes |  |
-| `type` | `str` | No |  |
-| `url` | `str` | Yes |  |
+| `apply_url` | `str` | No | Direct application URL |
+| `company` | `str` | Yes | Company name |
+| `description` | `str` | No | Detailed job description |
+| `id` | `str` | Yes | Unique identifier for the job listing |
+| `location` | `str` | Yes | Job location (remote location specification) |
+| `posted_date` | `str` | No | Date and time when the job was posted |
+| `region` | `str` | No | Geographic region (UK, Europe, EMEA) |
+| `salary` | `str` | No | Salary range or compensation details |
+| `tags` | `list` | No | Tags or categories associated with the job |
+| `title` | `str` | Yes | Job title |
+| `type` | `str` | No | Employment type |
+| `url` | `str` | Yes | URL to the full job listing |
 
 ### Operations
 

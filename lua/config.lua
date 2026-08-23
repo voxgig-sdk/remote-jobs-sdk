@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "RemoteJobs",
+      slug = "remote-jobs",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,55 +32,67 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "apply_url",
+            ["short"] = "Direct application URL",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "company",
             ["req"] = true,
+            ["short"] = "Company name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "description",
+            ["short"] = "Detailed job description",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "id",
             ["req"] = true,
+            ["short"] = "Unique identifier for the job listing",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "location",
             ["req"] = true,
+            ["short"] = "Job location (remote location specification)",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "posted_date",
+            ["short"] = "Date and time when the job was posted",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "region",
+            ["short"] = "Geographic region (UK, Europe, EMEA)",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "salary",
+            ["short"] = "Salary range or compensation details",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "tags",
+            ["short"] = "Tags or categories associated with the job",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "title",
             ["req"] = true,
+            ["short"] = "Job title",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "type",
+            ["short"] = "Employment type",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "url",
             ["req"] = true,
+            ["short"] = "URL to the full job listing",
             ["type"] = "`$STRING`",
           },
         },

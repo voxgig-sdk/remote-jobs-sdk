@@ -243,18 +243,18 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `apply_url` |  |
-| `company` |  |
-| `description` |  |
-| `id` |  |
-| `location` |  |
-| `posted_date` |  |
-| `region` |  |
-| `salary` |  |
-| `tags` |  |
-| `title` |  |
-| `type` |  |
-| `url` |  |
+| `apply_url` | Direct application URL |
+| `company` | Company name |
+| `description` | Detailed job description |
+| `id` | Unique identifier for the job listing |
+| `location` | Job location (remote location specification) |
+| `posted_date` | Date and time when the job was posted |
+| `region` | Geographic region (UK, Europe, EMEA) |
+| `salary` | Salary range or compensation details |
+| `tags` | Tags or categories associated with the job |
+| `title` | Job title |
+| `type` | Employment type |
+| `url` | URL to the full job listing |
 
 Operations: List.
 
@@ -279,18 +279,18 @@ Create an instance: `job = client.Job()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `apply_url` | `str` |  |
-| `company` | `str` |  |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `location` | `str` |  |
-| `posted_date` | `str` |  |
-| `region` | `str` |  |
-| `salary` | `str` |  |
-| `tags` | `list` |  |
-| `title` | `str` |  |
-| `type` | `str` |  |
-| `url` | `str` |  |
+| `apply_url` | `str` | Direct application URL |
+| `company` | `str` | Company name |
+| `description` | `str` | Detailed job description |
+| `id` | `str` | Unique identifier for the job listing |
+| `location` | `str` | Job location (remote location specification) |
+| `posted_date` | `str` | Date and time when the job was posted |
+| `region` | `str` | Geographic region (UK, Europe, EMEA) |
+| `salary` | `str` | Salary range or compensation details |
+| `tags` | `list` | Tags or categories associated with the job |
+| `title` | `str` | Job title |
+| `type` | `str` | Employment type |
+| `url` | `str` | URL to the full job listing |
 
 #### Example: List
 

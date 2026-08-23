@@ -237,18 +237,18 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `apply_url` |  |
-| `company` |  |
-| `description` |  |
-| `id` |  |
-| `location` |  |
-| `posted_date` |  |
-| `region` |  |
-| `salary` |  |
-| `tags` |  |
-| `title` |  |
-| `type` |  |
-| `url` |  |
+| `apply_url` | Direct application URL |
+| `company` | Company name |
+| `description` | Detailed job description |
+| `id` | Unique identifier for the job listing |
+| `location` | Job location (remote location specification) |
+| `posted_date` | Date and time when the job was posted |
+| `region` | Geographic region (UK, Europe, EMEA) |
+| `salary` | Salary range or compensation details |
+| `tags` | Tags or categories associated with the job |
+| `title` | Job title |
+| `type` | Employment type |
+| `url` | URL to the full job listing |
 
 Operations: List.
 
@@ -273,18 +273,18 @@ Create an instance: `job = client.Job`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `apply_url` | `String` |  |
-| `company` | `String` |  |
-| `description` | `String` |  |
-| `id` | `String` |  |
-| `location` | `String` |  |
-| `posted_date` | `String` |  |
-| `region` | `String` |  |
-| `salary` | `String` |  |
-| `tags` | `Array` |  |
-| `title` | `String` |  |
-| `type` | `String` |  |
-| `url` | `String` |  |
+| `apply_url` | `String` | Direct application URL |
+| `company` | `String` | Company name |
+| `description` | `String` | Detailed job description |
+| `id` | `String` | Unique identifier for the job listing |
+| `location` | `String` | Job location (remote location specification) |
+| `posted_date` | `String` | Date and time when the job was posted |
+| `region` | `String` | Geographic region (UK, Europe, EMEA) |
+| `salary` | `String` | Salary range or compensation details |
+| `tags` | `Array` | Tags or categories associated with the job |
+| `title` | `String` | Job title |
+| `type` | `String` | Employment type |
+| `url` | `String` | URL to the full job listing |
 
 #### Example: List
 

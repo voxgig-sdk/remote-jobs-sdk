@@ -36,72 +36,84 @@
               "active": true,
               "name": "apply_url",
               "req": false,
+              "short": "Direct application URL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "company",
               "req": true,
+              "short": "Company name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Detailed job description",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": true,
+              "short": "Unique identifier for the job listing",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "location",
               "req": true,
+              "short": "Job location (remote location specification)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "posted_date",
               "req": false,
+              "short": "Date and time when the job was posted",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "region",
               "req": false,
+              "short": "Geographic region (UK, Europe, EMEA)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "salary",
               "req": false,
+              "short": "Salary range or compensation details",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "tags",
               "req": false,
+              "short": "Tags or categories associated with the job",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "title",
               "req": true,
+              "short": "Job title",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Employment type",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": true,
+              "short": "URL to the full job listing",
               "type": "`$STRING`"
             }
           ],

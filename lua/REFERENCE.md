@@ -90,18 +90,18 @@ local job = client:Job(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `apply_url` | `string` | No |  |
-| `company` | `string` | Yes |  |
-| `description` | `string` | No |  |
-| `id` | `string` | Yes |  |
-| `location` | `string` | Yes |  |
-| `posted_date` | `string` | No |  |
-| `region` | `string` | No |  |
-| `salary` | `string` | No |  |
-| `tags` | `table` | No |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | No |  |
-| `url` | `string` | Yes |  |
+| `apply_url` | `string` | No | Direct application URL |
+| `company` | `string` | Yes | Company name |
+| `description` | `string` | No | Detailed job description |
+| `id` | `string` | Yes | Unique identifier for the job listing |
+| `location` | `string` | Yes | Job location (remote location specification) |
+| `posted_date` | `string` | No | Date and time when the job was posted |
+| `region` | `string` | No | Geographic region (UK, Europe, EMEA) |
+| `salary` | `string` | No | Salary range or compensation details |
+| `tags` | `table` | No | Tags or categories associated with the job |
+| `title` | `string` | Yes | Job title |
+| `type` | `string` | No | Employment type |
+| `url` | `string` | Yes | URL to the full job listing |
 
 ### Operations
 

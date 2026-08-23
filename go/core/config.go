@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "RemoteJobs",
+			"slug": "remote-jobs",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,55 +36,67 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "apply_url",
+						"short": "Direct application URL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "company",
 						"req": true,
+						"short": "Company name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Detailed job description",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
 						"req": true,
+						"short": "Unique identifier for the job listing",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "location",
 						"req": true,
+						"short": "Job location (remote location specification)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "posted_date",
+						"short": "Date and time when the job was posted",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "region",
+						"short": "Geographic region (UK, Europe, EMEA)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "salary",
+						"short": "Salary range or compensation details",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tags",
+						"short": "Tags or categories associated with the job",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "title",
 						"req": true,
+						"short": "Job title",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Employment type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
 						"req": true,
+						"short": "URL to the full job listing",
 						"type": "`$STRING`",
 					},
 				},
