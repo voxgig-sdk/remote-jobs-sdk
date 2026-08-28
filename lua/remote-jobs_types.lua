@@ -21,18 +21,9 @@
 ---@field url string
 
 ---@class JobListMatch
----@field apply_url? string
----@field company? string
----@field description? string
----@field id? string
----@field location? string
----@field posted_date? string
+---@field format? string
+---@field limit? number
 ---@field region? string
----@field salary? string
----@field tags? table
----@field title? string
----@field type? string
----@field url? string
 
 local M = {}
 

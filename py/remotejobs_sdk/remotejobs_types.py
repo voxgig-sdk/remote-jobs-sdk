@@ -35,15 +35,6 @@ class Job(JobRequired, total=False):
 
 
 class JobListMatch(TypedDict, total=False):
-    apply_url: str
-    company: str
-    description: str
-    id: str
-    location: str
-    posted_date: str
+    format: str
+    limit: int
     region: str
-    salary: str
-    tags: list
-    title: str
-    type: str
-    url: str

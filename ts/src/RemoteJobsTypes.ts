@@ -21,17 +21,8 @@ export interface Job {
 }
 
 export interface JobListMatch {
-  apply_url?: string
-  company?: string
-  description?: string
-  id?: string
-  location?: string
-  posted_date?: string
+  format?: string
+  limit?: number
   region?: string
-  salary?: string
-  tags?: any[]
-  title?: string
-  type?: string
-  url?: string
 }
 
