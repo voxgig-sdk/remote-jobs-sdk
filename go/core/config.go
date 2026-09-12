@@ -36,6 +36,7 @@ func MakeConfig() map[string]any {
 			"job": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "uri",
 						"name": "apply_url",
 						"short": "Direct application URL",
 						"type": "`$STRING`",
@@ -64,6 +65,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "posted_date",
 						"short": "Date and time when the job was posted",
 						"type": "`$STRING`",
@@ -95,11 +97,16 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"req": true,
 						"short": "URL to the full job listing",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "job",
 				"op": map[string]any{
@@ -135,9 +142,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/jobs",
-								"parts": []any{
-									"api",
-									"jobs",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "jobs",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -150,6 +161,10 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body.jobs`",
 								},
+								"parts": []any{
+									"api",
+									"jobs",
+								},
 							},
 						},
 					},
@@ -160,6 +175,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

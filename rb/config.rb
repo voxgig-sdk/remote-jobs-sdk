@@ -44,6 +44,7 @@ module RemoteJobsConfig
         "job" => {
           "fields" => [
             {
+              "format" => "uri",
               "name" => "apply_url",
               "short" => "Direct application URL",
               "type" => "`$STRING`",
@@ -72,6 +73,7 @@ module RemoteJobsConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "posted_date",
               "short" => "Date and time when the job was posted",
               "type" => "`$STRING`",
@@ -103,12 +105,17 @@ module RemoteJobsConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "req" => true,
               "short" => "URL to the full job listing",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "job",
           "op" => {
             "list" => {
@@ -143,9 +150,13 @@ module RemoteJobsConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/jobs",
-                  "parts" => [
-                    "api",
-                    "jobs",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "jobs",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -158,6 +169,10 @@ module RemoteJobsConfig
                     "req" => "`reqdata`",
                     "res" => "`body.jobs`",
                   },
+                  "parts" => [
+                    "api",
+                    "jobs",
+                  ],
                 },
               ],
             },

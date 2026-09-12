@@ -32,6 +32,7 @@ local function make_config()
       ["job"] = {
         ["fields"] = {
           {
+            ["format"] = "uri",
             ["name"] = "apply_url",
             ["short"] = "Direct application URL",
             ["type"] = "`$STRING`",
@@ -60,6 +61,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "posted_date",
             ["short"] = "Date and time when the job was posted",
             ["type"] = "`$STRING`",
@@ -91,11 +93,16 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "url",
             ["req"] = true,
             ["short"] = "URL to the full job listing",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "job",
         ["op"] = {
@@ -131,9 +138,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/jobs",
-                ["parts"] = {
-                  "api",
-                  "jobs",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "jobs",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -145,6 +156,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.jobs`",
+                },
+                ["parts"] = {
+                  "api",
+                  "jobs",
                 },
               },
             },
