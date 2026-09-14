@@ -105,7 +105,7 @@ local results, err = client:Job():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
+| TypeScript | `@voxgig-sdk/remote-jobs-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
 | Python | `voxgig-sdk-remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
 | PHP | `voxgig-sdk/remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/remote-jobs-sdk/go` | `go get github.com/voxgig-sdk/remote-jobs-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Job():list()
 ### TypeScript
 
 ```ts
-import { RemoteJobsSDK } from '@voxgig-sdk/remote-jobs'
+import { RemoteJobsSDK } from '@voxgig-sdk/remote-jobs-sdk'
 
 const client = new RemoteJobsSDK()
 

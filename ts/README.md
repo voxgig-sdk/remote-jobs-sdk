@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { RemoteJobsSDK } from '@voxgig-sdk/remote-jobs'
+import { RemoteJobsSDK } from '@voxgig-sdk/remote-jobs-sdk'
 
 const client = new RemoteJobsSDK()
 ```
@@ -425,7 +425,7 @@ remote-jobs/
 Import the SDK from the package root:
 
 ```ts
-import { RemoteJobsSDK } from '@voxgig-sdk/remote-jobs'
+import { RemoteJobsSDK } from '@voxgig-sdk/remote-jobs-sdk'
 ```
 
 ### Entity state
