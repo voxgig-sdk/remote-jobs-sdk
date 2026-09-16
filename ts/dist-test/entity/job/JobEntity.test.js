@@ -40,6 +40,8 @@ const node_path_1 = __importDefault(require("node:path"));
 const Fs = __importStar(require("node:fs"));
 const node_test_1 = require("node:test");
 const node_assert_1 = __importDefault(require("node:assert"));
+const live_runner_1 = require("../../live-runner");
+const live_entity_1 = require("../../live-entity");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
 // AFTER the imports on purpose: TypeScript hoists `import` above any
@@ -59,16 +61,12 @@ const utility_1 = require("../../utility");
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.REMOTE_JOBS_TEST_LIVE;
         for (const op of ['list']) {
-            if ((0, utility_1.maybeSkipControl)(t, 'entityOp', 'job.' + op, live))
+            if (!live && (0, utility_1.maybeSkipControl)(t, 'entityOp', 'job.' + op, live))
                 return;
         }
         const setup = basicSetup();
-        // The basic flow consumes synthetic IDs and field values from the
-        // fixture (entity TestData.json). Those don't exist on the live API.
-        // Skip live runs unless the user provided a real ENTID env override.
-        if (setup.syntheticOnly) {
-            t.skip('live entity test uses synthetic IDs from fixture — set REMOTE_JOBS_TEST_JOB_ENTID JSON to run live');
-            return;
+        if (setup.live) {
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": [{ "active": true, "format": "uri", "name": "apply_url", "req": false, "short": "Direct application URL", "type": "`$STRING`", "index$": 0 }, { "active": true, "name": "company", "req": true, "short": "Company name", "type": "`$STRING`", "index$": 1 }, { "active": true, "name": "description", "req": false, "short": "Detailed job description", "type": "`$STRING`", "index$": 2 }, { "active": true, "name": "id", "req": true, "short": "Unique identifier for the job listing", "type": "`$STRING`", "index$": 3 }, { "active": true, "name": "location", "req": true, "short": "Job location (remote location specification)", "type": "`$STRING`", "index$": 4 }, { "active": true, "format": "date-time", "name": "posted_date", "req": false, "short": "Date and time when the job was posted", "type": "`$STRING`", "index$": 5 }, { "active": true, "name": "region", "req": false, "short": "Geographic region (UK, Europe, EMEA)", "type": "`$STRING`", "index$": 6 }, { "active": true, "name": "salary", "req": false, "short": "Salary range or compensation details", "type": "`$STRING`", "index$": 7 }, { "active": true, "name": "tags", "req": false, "short": "Tags or categories associated with the job", "type": "`$ARRAY`", "index$": 8 }, { "active": true, "name": "title", "req": true, "short": "Job title", "type": "`$STRING`", "index$": 9 }, { "active": true, "name": "type", "req": false, "short": "Employment type", "type": "`$STRING`", "index$": 10 }, { "active": true, "format": "uri", "name": "url", "req": true, "short": "URL to the full job listing", "type": "`$STRING`", "index$": 11 }], "id": { "field": "id", "name": "id" }, "name": "job", "op": { "list": { "input": "data", "name": "list", "points": [{ "active": true, "args": { "query": [{ "active": true, "example": "json", "kind": "query", "name": "format", "orig": "format", "reqd": false, "type": "`$STRING`", "index$": 0 }, { "active": true, "example": 50, "kind": "query", "name": "limit", "orig": "limit", "reqd": false, "type": "`$INTEGER`", "index$": 1 }, { "active": true, "kind": "query", "name": "region", "orig": "region", "reqd": false, "type": "`$STRING`", "index$": 2 }] }, "contract": { "id": "GET /api/jobs", "json": "{\"operationId\":\"getRemoteJobs\",\"parameters\":[{\"description\":\"Filter jobs by region (UK, Europe, EMEA)\",\"in\":\"query\",\"name\":\"region\",\"required\":false,\"schema\":{\"enum\":[\"UK\",\"Europe\",\"EMEA\"],\"type\":\"string\"}},{\"description\":\"Number of job listings to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"Response format (json or rss)\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"rss\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"jobs\":[{\"company\":\"Tech Company Ltd\",\"description\":\"We are looking for an experienced software engineer...\",\"id\":\"12345\",\"location\":\"Remote - UK\",\"posted_date\":\"2024-01-15T10:00:00Z\",\"region\":\"UK\",\"salary\":\"£60,000 - £80,000\",\"tags\":[\"Engineering\",\"Remote\",\"Full-time\"],\"title\":\"Senior Software Engineer\",\"type\":\"Full-time\",\"url\":\"https://www.remote1stjobs.com/jobs/12345\"}],\"page\":1,\"total\":150},\"schema\":{\"properties\":{\"jobs\":{\"items\":{\"properties\":{\"apply_url\":{\"description\":\"Direct application URL\",\"format\":\"uri\",\"type\":\"string\"},\"company\":{\"description\":\"Company name\",\"type\":\"string\"},\"description\":{\"description\":\"Detailed job description\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the job listing\",\"type\":\"string\"},\"location\":{\"description\":\"Job location (remote location specification)\",\"type\":\"string\"},\"posted_date\":{\"description\":\"Date and time when the job was posted\",\"format\":\"date-time\",\"type\":\"string\"},\"region\":{\"description\":\"Geographic region (UK, Europe, EMEA)\",\"enum\":[\"UK\",\"Europe\",\"EMEA\"],\"type\":\"string\"},\"salary\":{\"description\":\"Salary range or compensation details\",\"type\":\"string\"},\"tags\":{\"description\":\"Tags or categories associated with the job\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"title\":{\"description\":\"Job title\",\"type\":\"string\"},\"type\":{\"description\":\"Employment type\",\"enum\":[\"Full-time\",\"Part-time\",\"Contract\",\"Freelance\"],\"type\":\"string\"},\"url\":{\"description\":\"URL to the full job listing\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"company\",\"location\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"page\":{\"description\":\"Current page number\",\"type\":\"integer\"},\"total\":{\"description\":\"Total number of jobs available\",\"type\":\"integer\"}},\"type\":\"object\"}},\"application/rss+xml\":{\"schema\":{\"format\":\"xml\",\"type\":\"string\"}}},\"description\":\"Successful response with job listings\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"details\":{\"description\":\"Additional error details\",\"type\":\"string\"},\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"details\":{\"description\":\"Additional error details\",\"type\":\"string\"},\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Too many requests - Rate limit exceeded\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"details\":{\"description\":\"Additional error details\",\"type\":\"string\"},\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "GET", "orig": "/api/jobs", "segments": [{ "lit": "api" }, { "lit": "jobs" }], "select": { "exist": ["format", "limit", "region"] }, "transform": { "req": "`reqdata`", "res": "`body.jobs`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "job", "name__orig": "job", "Name": "Job", "name_": "job", "name-": "job", "NAME": "JOB", "index$": 0 }, { "active": true, "entity": "job", "key$": "BasicJobFlow", "kind": "basic", "name": "BasicJobFlow", "param": {}, "step": [{ "active": true, "data": {}, "input": {}, "match": {}, "op": "list", "spec": [], "valid": [{ "apply": "ItemExists", "def": { "ref": "job_ref01" } }], "index$": 0 }] }, 'Job');
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -101,12 +99,6 @@ function basicSetup(extra) {
                 '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
             }]
     });
-    // Detect whether the user provided a real ENTID JSON via env var. The
-    // basic flow consumes synthetic IDs from the fixture file; without an
-    // override those synthetic IDs reach the live API and 4xx. Surface this
-    // to the test so it can skip rather than fail.
-    const idmapEnvVal = process.env['REMOTE_JOBS_TEST_JOB_ENTID'];
-    const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
     const env = (0, utility_1.envOverride)({
         'REMOTE_JOBS_TEST_JOB_ENTID': idmap,
         'REMOTE_JOBS_TEST_LIVE': 'FALSE',
@@ -114,7 +106,13 @@ function basicSetup(extra) {
     });
     idmap = env['REMOTE_JOBS_TEST_JOB_ENTID'];
     const live = 'TRUE' === env.REMOTE_JOBS_TEST_LIVE;
+    const transport = (0, live_runner_1.createLiveTransport)();
     if (live) {
+        const rawIds = process.env['REMOTE_JOBS_TEST_JOB_ENTID'];
+        idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {};
+        if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+            throw new Error('Live ENTID must be a JSON object');
+        }
         client = new __1.RemoteJobsSDK(merge([
             // FIRST, so the generated fields below win: sdk-test-control.json's
             // test.client.options adds to the live client, it does not redirect it.
@@ -125,7 +123,8 @@ function basicSetup(extra) {
             // argument at all - so a bare 'extra' silently discarded the apikey
             // and server values above and handed the SDK undefined. Harmless
             // while there was nothing in that object; not harmless now.
-            extra || {}
+            extra || {},
+            { system: { fetch: transport.fetch } }
         ]));
     }
     const setup = {
@@ -137,7 +136,7 @@ function basicSetup(extra) {
         data: entityData,
         explain: 'TRUE' === env.REMOTE_JOBS_TEST_EXPLAIN,
         live,
-        syntheticOnly: live && !idmapOverridden,
+        transport,
         now: Date.now(),
     };
     return setup;
