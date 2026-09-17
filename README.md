@@ -105,12 +105,12 @@ local results, err = client:Job():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/remote-jobs-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
-| Python | `voxgig-sdk-remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
-| PHP | `voxgig-sdk/remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
+| TypeScript | `@voxgig-sdk/remote-jobs-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
+| Python | `voxgig-sdk-remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
+| PHP | `voxgig-sdk/remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/remote-jobs-sdk/go` | `go get github.com/voxgig-sdk/remote-jobs-sdk/go@latest` |
-| Ruby | `voxgig-sdk-remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
-| Lua | `voxgig-sdk-remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/releases) |
+| Ruby | `voxgig-sdk-remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
+| Lua | `voxgig-sdk-remote-jobs` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/remote-jobs-sdk/go-cli` | `go install github.com/voxgig-sdk/remote-jobs-sdk/go-cli/cmd/remote-jobs@latest` |
 | Go MCP server | `github.com/voxgig-sdk/remote-jobs-sdk/go-mcp` | `go get github.com/voxgig-sdk/remote-jobs-sdk/go-mcp@latest` |
 
