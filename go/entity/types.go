@@ -1,7 +1,7 @@
 // Typed models for the RemoteJobs SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,18 +14,6 @@ import (
 
 // Job is the typed data model for the job entity.
 type Job struct {
-	ApplyUrl *string `json:"apply_url,omitempty"`
-	Company string `json:"company"`
-	Description *string `json:"description,omitempty"`
-	Id string `json:"id"`
-	Location string `json:"location"`
-	PostedDate *string `json:"posted_date,omitempty"`
-	Region *string `json:"region,omitempty"`
-	Salary *string `json:"salary,omitempty"`
-	Tags *[]any `json:"tags,omitempty"`
-	Title string `json:"title"`
-	Type *string `json:"type,omitempty"`
-	Url string `json:"url"`
 }
 
 // JobListMatch is the typed request payload for Job.ListTyped.

@@ -115,72 +115,84 @@ def make_config():
       "job": {
         "fields": [
           {
-            "format": "uri",
             "name": "apply_url",
-            "short": "Direct application URL",
+            "title": "Apply Url",
             "type": "`$STRING`",
+            "short": "Direct application URL",
+            "format": "uri",
           },
           {
             "name": "company",
+            "title": "Company",
+            "type": "`$STRING`",
             "req": True,
             "short": "Company name",
-            "type": "`$STRING`",
           },
           {
             "name": "description",
-            "short": "Detailed job description",
+            "title": "Description",
             "type": "`$STRING`",
+            "short": "Detailed job description",
           },
           {
             "name": "id",
+            "title": "Id",
+            "type": "`$STRING`",
             "req": True,
             "short": "Unique identifier for the job listing",
-            "type": "`$STRING`",
           },
           {
             "name": "location",
+            "title": "Location",
+            "type": "`$STRING`",
             "req": True,
             "short": "Job location (remote location specification)",
-            "type": "`$STRING`",
           },
           {
-            "format": "date-time",
             "name": "posted_date",
-            "short": "Date and time when the job was posted",
+            "title": "Posted Date",
             "type": "`$STRING`",
+            "short": "Date and time when the job was posted",
+            "format": "date-time",
           },
           {
             "name": "region",
-            "short": "Geographic region (UK, Europe, EMEA)",
+            "title": "Region",
             "type": "`$STRING`",
+            "short": "Geographic region (UK, Europe, EMEA)",
           },
           {
             "name": "salary",
-            "short": "Salary range or compensation details",
+            "title": "Salary",
             "type": "`$STRING`",
+            "short": "Salary range or compensation details",
           },
           {
             "name": "tags",
-            "short": "Tags or categories associated with the job",
+            "title": "Tags",
             "type": "`$ARRAY`",
+            "short": "Tags or categories associated with the job",
           },
           {
             "name": "title",
+            "title": "Title",
+            "type": "`$STRING`",
             "req": True,
             "short": "Job title",
-            "type": "`$STRING`",
           },
           {
             "name": "type",
-            "short": "Employment type",
+            "title": "Type",
             "type": "`$STRING`",
+            "short": "Employment type",
           },
           {
-            "format": "uri",
             "name": "url",
+            "title": "Url",
+            "type": "`$STRING`",
             "req": True,
             "short": "URL to the full job listing",
-            "type": "`$STRING`",
+            "format": "uri",
           },
         ],
         "id": {
@@ -194,30 +206,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": "json",
-                      "kind": "query",
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                    },
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "kind": "query",
-                      "name": "region",
-                      "orig": "region",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/jobs",
@@ -229,6 +217,39 @@ def make_config():
                     "lit": "jobs",
                   },
                 ],
+                "parts": [
+                  "api",
+                  "jobs",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body.jobs`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "json",
+                    },
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "region",
+                      "orig": "region",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "format",
@@ -236,14 +257,6 @@ def make_config():
                     "region",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body.jobs`",
-                },
-                "parts": [
-                  "api",
-                  "jobs",
-                ],
               },
             ],
           },

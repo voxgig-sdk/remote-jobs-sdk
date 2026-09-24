@@ -19,7 +19,6 @@ import type {
   JobListMatch,
 } from '../RemoteJobsTypes'
 
-// TODO: needs Entity superclass
 class JobEntity extends RemoteJobsEntityBase<Job> {
 
   constructor(client: RemoteJobsSDK, entopts: any) {

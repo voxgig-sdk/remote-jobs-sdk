@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -138,72 +131,84 @@ class Config {
     "job": {
       "fields": [
         {
-          "format": "uri",
           "name": "apply_url",
+          "title": "Apply Url",
+          "type": "`$STRING`",
           "short": "Direct application URL",
-          "type": "`$STRING`"
+          "format": "uri"
         },
         {
           "name": "company",
+          "title": "Company",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Company name",
-          "type": "`$STRING`"
+          "short": "Company name"
         },
         {
           "name": "description",
-          "short": "Detailed job description",
-          "type": "`$STRING`"
+          "title": "Description",
+          "type": "`$STRING`",
+          "short": "Detailed job description"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Unique identifier for the job listing",
-          "type": "`$STRING`"
+          "short": "Unique identifier for the job listing"
         },
         {
           "name": "location",
+          "title": "Location",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Job location (remote location specification)",
-          "type": "`$STRING`"
+          "short": "Job location (remote location specification)"
         },
         {
-          "format": "date-time",
           "name": "posted_date",
+          "title": "Posted Date",
+          "type": "`$STRING`",
           "short": "Date and time when the job was posted",
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
           "name": "region",
-          "short": "Geographic region (UK, Europe, EMEA)",
-          "type": "`$STRING`"
+          "title": "Region",
+          "type": "`$STRING`",
+          "short": "Geographic region (UK, Europe, EMEA)"
         },
         {
           "name": "salary",
-          "short": "Salary range or compensation details",
-          "type": "`$STRING`"
+          "title": "Salary",
+          "type": "`$STRING`",
+          "short": "Salary range or compensation details"
         },
         {
           "name": "tags",
-          "short": "Tags or categories associated with the job",
-          "type": "`$ARRAY`"
+          "title": "Tags",
+          "type": "`$ARRAY`",
+          "short": "Tags or categories associated with the job"
         },
         {
           "name": "title",
+          "title": "Title",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Job title",
-          "type": "`$STRING`"
+          "short": "Job title"
         },
         {
           "name": "type",
-          "short": "Employment type",
-          "type": "`$STRING`"
+          "title": "Type",
+          "type": "`$STRING`",
+          "short": "Employment type"
         },
         {
-          "format": "uri",
           "name": "url",
+          "title": "Url",
+          "type": "`$STRING`",
           "req": true,
           "short": "URL to the full job listing",
-          "type": "`$STRING`"
+          "format": "uri"
         }
       ],
       "id": {
@@ -217,30 +222,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": "json",
-                    "kind": "query",
-                    "name": "format",
-                    "orig": "format",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": 50,
-                    "kind": "query",
-                    "name": "limit",
-                    "orig": "limit",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "region",
-                    "orig": "region",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/api/jobs",
@@ -252,21 +233,46 @@ class Config {
                   "lit": "jobs"
                 }
               ],
+              "parts": [
+                "api",
+                "jobs"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body.jobs`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "format",
+                    "orig": "format",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "json"
+                  },
+                  {
+                    "name": "limit",
+                    "orig": "limit",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 50
+                  },
+                  {
+                    "name": "region",
+                    "orig": "region",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "format",
                   "limit",
                   "region"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body.jobs`"
-              },
-              "parts": [
-                "api",
-                "jobs"
-              ]
+              }
             }
           ]
         }

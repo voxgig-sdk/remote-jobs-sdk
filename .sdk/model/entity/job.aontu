@@ -1,0 +1,168 @@
+# Entity: job
+
+main: kit: entity: job: {
+
+  alias: field: {}
+
+  fields: {
+    apply_url: {
+      fo: "uri"
+      h: "Apply Url"
+      n: "apply_url"
+      r: false
+      sh: "Direct application URL"
+      t: "`$STRING`"
+    }
+    company: {
+      h: "Company"
+      n: "company"
+      r: true
+      sh: "Company name"
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Detailed job description"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the job listing"
+      t: "`$STRING`"
+    }
+    location: {
+      h: "Location"
+      n: "location"
+      r: true
+      sh: "Job location (remote location specification)"
+      t: "`$STRING`"
+    }
+    posted_date: {
+      fo: "date-time"
+      h: "Posted Date"
+      n: "posted_date"
+      r: false
+      sh: "Date and time when the job was posted"
+      t: "`$STRING`"
+    }
+    region: {
+      h: "Region"
+      n: "region"
+      r: false
+      sh: "Geographic region (UK, Europe, EMEA)"
+      t: "`$STRING`"
+    }
+    salary: {
+      h: "Salary"
+      n: "salary"
+      r: false
+      sh: "Salary range or compensation details"
+      t: "`$STRING`"
+    }
+    tags: {
+      h: "Tags"
+      n: "tags"
+      r: false
+      sh: "Tags or categories associated with the job"
+      t: "`$ARRAY`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      sh: "Job title"
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Employment type"
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "URL to the full job listing"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "job"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/jobs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "region"
+                or: "region"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/jobs"
+          q: {
+            exist: [
+              "format"
+              "limit"
+              "region"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "jobs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.jobs`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
