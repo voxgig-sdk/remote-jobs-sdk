@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 RemoteJobsUtility.registrar = ->(u) {
   u.clean = RemoteJobsUtilities::Clean
+  u.clean_add = RemoteJobsUtilities::CleanAdd
+  u.clean_explain = RemoteJobsUtilities::CleanExplain
   u.done = RemoteJobsUtilities::Done
   u.make_error = RemoteJobsUtilities::MakeError
   u.feature_add = RemoteJobsUtilities::FeatureAdd

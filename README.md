@@ -14,7 +14,7 @@ Metadata kindly supplied by [www.freepublicapis.com](https://www.freepublicapis.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
-> **Features:** `undefined`, `undefined`, `undefined`, `undefined` — opt-in,
+> **Features:** `ratelimit`, `retry`, `test`, `timeout` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
 
@@ -105,12 +105,12 @@ local results, err = client:Job():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/remote-jobs-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
-| Python | `voxgig-sdk-remote-jobs-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
-| PHP | `voxgig-sdk/remote-jobs-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
+| TypeScript | `@voxgig-sdk/remote-jobs-sdk` | publish pending — [install from source](ts/README.md#install) |
+| Python | `voxgig-sdk-remote-jobs-sdk` | publish pending — [install from source](py/README.md#install) |
+| PHP | `voxgig-sdk/remote-jobs-sdk` | publish pending — [install from source](php/README.md#install) |
 | Golang | `github.com/voxgig-sdk/remote-jobs-sdk/go` | `go get github.com/voxgig-sdk/remote-jobs-sdk/go@latest` |
-| Ruby | `voxgig-sdk-remote-jobs-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
-| Lua | `voxgig-sdk-remote-jobs-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/remote-jobs-sdk/tags) |
+| Ruby | `voxgig-sdk-remote-jobs-sdk` | publish pending — [install from source](rb/README.md#install) |
+| Lua | `voxgig-sdk-remote-jobs-sdk` | publish pending — [install from source](lua/README.md#install) |
 | Go CLI | `github.com/voxgig-sdk/remote-jobs-sdk/go-cli` | `go install github.com/voxgig-sdk/remote-jobs-sdk/go-cli/cmd/remote-jobs@latest` |
 | Go MCP server | `github.com/voxgig-sdk/remote-jobs-sdk/go-mcp` | `go get github.com/voxgig-sdk/remote-jobs-sdk/go-mcp@latest` |
 

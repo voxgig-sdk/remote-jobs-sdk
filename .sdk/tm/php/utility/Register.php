@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 RemoteJobsUtility::setRegistrar(function (RemoteJobsUtility $u): void {
     $u->clean = [RemoteJobsClean::class, 'call'];
+    $u->clean_add = [RemoteJobsClean::class, 'add'];
+    $u->clean_explain = [RemoteJobsDone::class, 'clean_explain'];
     $u->done = [RemoteJobsDone::class, 'call'];
     $u->make_error = [RemoteJobsMakeError::class, 'call'];
     $u->feature_add = [RemoteJobsFeatureAdd::class, 'call'];
