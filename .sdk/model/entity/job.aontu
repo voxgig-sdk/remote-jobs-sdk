@@ -139,12 +139,15 @@ main: kit: entity: job: {
           }
           m: "GET"
           o: "/api/jobs"
-          q: {
-            exist: [
-              "format"
-              "limit"
-              "region"
+          rs: {
+            alternatives: [
+              {
+                kind: "raw"
+                media: "application/rss+xml"
+              }
             ]
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

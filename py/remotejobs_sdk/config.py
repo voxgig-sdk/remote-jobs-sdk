@@ -96,6 +96,7 @@ def make_config():
         },
         "optspec": {
           "clearTimer": "`$FUNCTION`",
+          "now": "`$FUNCTION`",
           "setTimer": "`$FUNCTION`",
         },
         "strict": False,
@@ -247,15 +248,20 @@ def make_config():
                       "orig": "region",
                       "type": "`$STRING`",
                       "kind": "query",
+                      "field": True,
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "format",
-                    "limit",
-                    "region",
+                "select": {},
+                "response": {
+                  "alternatives": [
+                    {
+                      "kind": "raw",
+                      "media": "application/rss+xml",
+                    },
                   ],
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],

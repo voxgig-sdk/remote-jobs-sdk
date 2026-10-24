@@ -3,11 +3,16 @@ declare(strict_types=1);
 
 // RemoteJobs SDK utility: prepare_body
 
+require_once __DIR__ . '/Media.php';
+
 class RemoteJobsPrepareBody
 {
     public static function call(RemoteJobsContext $ctx): mixed
     {
         if ($ctx->op->input === 'data') {
+            if (RemoteJobsMedia::isRawRequest($ctx->point)) {
+                return RemoteJobsMedia::rawBody($ctx->reqdata);
+            }
             $body = ($ctx->utility->transform_request)($ctx);
             // PHP cannot tell an empty map from an empty list, and this
             // vendored struct answers [] where the canonical transform

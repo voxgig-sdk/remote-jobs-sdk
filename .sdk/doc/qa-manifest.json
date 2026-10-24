@@ -3,5 +3,17 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Company name",
+      "Detailed job description",
+      "Direct application URL",
+      "Job location (remote location specification)",
+      "Production server",
+      "Remote1stJobs provides a comprehensive JSON and RSS feed system for accessing fresh remote job listings in the UK, Europe, and EMEA. This API is ideal for newsletters, communities, AI agents, and job tools that require structured data of Europe-focused remote roles.",
+      "Successful response with job listings",
+      "Unique identifier for the job listing"
+    ]
+  }
 }

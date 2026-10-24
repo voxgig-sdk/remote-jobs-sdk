@@ -79,6 +79,7 @@ module RemoteJobsConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -230,15 +231,20 @@ module RemoteJobsConfig
                         "orig" => "region",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "format",
-                      "limit",
-                      "region",
+                  "select" => {},
+                  "response" => {
+                    "alternatives" => [
+                      {
+                        "kind" => "raw",
+                        "media" => "application/rss+xml",
+                      },
                     ],
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

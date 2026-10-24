@@ -16,15 +16,34 @@ const PLAN: any[] = [
     "path": "/api/jobs",
     "args": [],
     "select": {
-      "format": "v1",
-      "limit": "v1",
+      "format": "json",
+      "limit": 50,
       "region": "v1"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json",
+      "application/rss+xml"
+    ],
     "query": [
       "region",
       "limit",
       "format"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      },
+      {
+        "name": "region",
+        "wire": "region"
+      }
     ],
     "auth": null,
     "status": 200,
